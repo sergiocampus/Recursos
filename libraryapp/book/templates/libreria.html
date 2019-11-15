@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+        <style>
+            .flex {
+                display: flex;
+                justify-content: space-around;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align-last: center;">Libreria</h1>
+        <div class="flex">
+        {% for book in todo %}
+            <div class="mdl-card mdl-shadow--2dp">
+                <img src="{{ book.imagen.url }}" width="auto" height="200" border="0" alt="">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">{{ book.titulo }}</h2>
+                </div>
+                <div class="mdl-card__supporting-text" style="padding: 0 16 16 16;">{{ book.autor }}</div>
+            </div>
+        {% endfor %}
+        </div>
+    </body>
+</html>
